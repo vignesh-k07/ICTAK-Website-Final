@@ -34,6 +34,13 @@ router.route("/").get((req, res) => {
   });
 });
 
+// get courses list
+router.route("/count").get((req, res) => {
+  Courses.find({status:"open"}).then(function (courses) {
+    res.json(courses.length);
+  });
+});
+
 // get single course page
 router.route("/:name").get((req, res) => {
 

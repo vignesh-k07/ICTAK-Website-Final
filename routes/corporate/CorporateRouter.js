@@ -29,4 +29,12 @@ router.route('/get').get((req,res)=>{
     })
 })
 
+// get data of registered students
+router.route('/count').get((req,res)=>{
+    corporateData.find().then(function(registered){
+        res.json(registered.length);
+        console.log(registered.length);
+    })
+})
+
 module.exports=router;

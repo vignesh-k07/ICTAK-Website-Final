@@ -17,7 +17,13 @@ router.route('/add').post((req,res)=>{
 router.route('/get').get((req,res)=>{
     Contact.find().then(function(contacted){
         res.json(contacted);
-        console.log(contacted);
+    })
+})
+
+// get data of registered students
+router.route('/count').get((req,res)=>{
+    Contact.find().then(function(contacted){
+        res.json(contacted.length);
     })
 })
 
